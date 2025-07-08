@@ -145,3 +145,16 @@ document.querySelectorAll(".skill-card, .portfolio-item").forEach((card) => {
     card.style.transform = `rotateY(0deg) rotateX(0deg)`;
   });
 });
+  // Check if the page has a success indicator (Formspree can redirect with ?success=1)
+  window.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === '1') {
+      const successMsg = document.querySelector('.success-message');
+      if (successMsg) {
+        successMsg.style.display = 'block';
+        setTimeout(() => {
+          successMsg.style.display = 'none';
+        }, 4000); // Hide after 4 seconds
+      }
+    }
+  });
