@@ -61,11 +61,37 @@ navItems.forEach(link => {
   });
 });
 
-// Contact Form Submission (Demo)
-document.getElementById("contact-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-  alert("Message sent! (This is just a demo — wire it to a real backend to receive messages.)");
-});
+// Contact Form Submission 
+  const form = document.querySelector("form");
+  const status = document.getElementById("form-status");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        status.innerHTML = "✅ Message sent successfully!";
+        form.reset();
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          status.innerHTML = "❌ " + data.errors.map(err => err.message).join(", ");
+        } else {
+          status.innerHTML = "❌ Something went wrong. Please try again.";
+        }
+      }
+    } catch (error) {
+      status.innerHTML = "❌ Error: " + error.message;
+    }
+  });
 
 
 // === Typed.js Typing Effect ===
