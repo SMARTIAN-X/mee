@@ -45,10 +45,20 @@ gsap.from(".resume-grid", {
 // Mobile Menu Toggle
 const burger = document.querySelector(".burger");
 const navLinks = document.querySelector(".nav-links");
+const navItems = document.querySelectorAll(".nav-links a");
 
+// Toggle on burger click
 burger.addEventListener("click", () => {
   navLinks.classList.toggle("active");
   burger.classList.toggle("toggle");
+});
+
+// Close menu when any link is clicked
+navItems.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    burger.classList.remove("toggle");
+  });
 });
 
 // Contact Form Submission (Demo)
