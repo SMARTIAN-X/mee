@@ -41,25 +41,45 @@ nav {
 }
 
 .nav-links {
-  display: flex;
-  list-style: none;
-}
-
-.nav-links li {
-  margin-left: 2rem;
+  display: none;
+  flex-direction: column;
+  align-items: center; /* center horizontally */
+  text-align: center;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 1.5rem 1rem;
+  gap: 1.2rem; /* spacing between items */
+  z-index: 999;
 }
 
 .nav-links a {
-  color: #333;
+  font-size: 1.1rem;
   text-decoration: none;
+  color: #1a1a1a;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #0077ff;
+  color: #00adb5;
 }
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
 
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 /* Burger Menu */
 .burger {
   display: none;
