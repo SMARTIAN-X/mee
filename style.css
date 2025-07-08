@@ -284,8 +284,6 @@ h2 {
 
 /* Contact Section */
 
-/* Contact Section */
-.contact-section {
 #contact {
   padding: 4rem 1rem;
   background: #f9f9f9;
@@ -347,8 +345,24 @@ form button[type="submit"]:hover {
 #form-status {
   font-size: 1rem;
   margin-top: 1rem;
+  color: green;
 }
 
+@media (max-width: 500px) {
+  form {
+    padding: 1.5rem;
+  }
+
+  form input,
+  form textarea {
+    font-size: 0.95rem;
+  }
+
+  form button[type="submit"] {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.2rem;
+  }
+}
 /* Success Message */
 .success-message {
   background-color: #0f0;
@@ -381,29 +395,7 @@ form button[type="submit"]:hover {
   }
 }
 
-/* Responsive */
-@media screen and (max-width: 600px) {
-  .contact-section {
-    padding: 1.5rem;
-  }
-}
 
-/* Social Links */
-.social-links {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.social-links a {
-  margin: 0 1rem;
-  font-size: 1.8rem;
-  color: #0077ff;
-  transition: transform 0.3s;
-}
-
-.social-links a:hover {
-  transform: scale(1.2);
-}
 
 /* Footer */
 footer {
