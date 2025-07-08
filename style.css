@@ -381,7 +381,6 @@ form button[type="submit"]:hover {
   to {
     opacity: 0;
     transform: translateY(-10px);
-    display: none;
   }
 }
 
@@ -466,16 +465,3 @@ footer {
   50% { opacity: 0; }
 }
 
-
-
-.burger.toggle .line1 {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.burger.toggle .line2 {
-  opacity: 0;
-}
-
-.burger.toggle .line3 {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
